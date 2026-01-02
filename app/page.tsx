@@ -44,7 +44,12 @@ export default function Home() {
     try {
       setError(null);
       const res = await fetch("/api/glossary");
-      if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`);
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.error || `Failed to fetch: ${res.statusText}`);
+      }
+
       const data = await res.json();
       setEntries(data.entries || []);
     } catch (error: any) {
