@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
 
     if (error) {
         console.error('Error fetching changelog:', error);
-        return NextResponse.json({ history: [] });
+        return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
     return NextResponse.json({ history: data || [] });
