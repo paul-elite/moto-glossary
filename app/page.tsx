@@ -308,7 +308,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
