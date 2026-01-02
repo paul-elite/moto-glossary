@@ -1,0 +1,224 @@
+{
+    "entries": [
+        {
+            "id": "1",
+            "title": "Ride Request",
+            "description": "A request initiated by a rider to book a trip from a pickup location to a destination.",
+            "rules": [
+                "Must include a valid pickup location",
+                "Must include a valid destination",
+                "Rider must be authenticated",
+                "Payment method must be on file"
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Driver",
+            "description": "An independent contractor who uses their personal vehicle to transport riders through the platform.",
+            "rules": [
+                "Must have valid driver's license",
+                "Must pass background check",
+                "Vehicle must meet safety requirements",
+                "Must maintain minimum rating threshold"
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Rider",
+            "description": "A user who requests and takes rides through the platform.",
+            "rules": [
+                "Must have verified account",
+                "Must have valid payment method",
+                "Must be at pickup location when driver arrives",
+                "Must follow community guidelines"
+            ]
+        },
+        {
+            "id": "4",
+            "title": "Surge Pricing",
+            "description": "Dynamic pricing that increases fares during periods of high demand to balance supply and demand.",
+            "rules": [
+                "Activated when demand exceeds available drivers",
+                "Multiplier must be displayed before booking",
+                "Rider must confirm surge price before trip",
+                "Surge multiplier calculated by zone"
+            ]
+        },
+        {
+            "id": "5",
+            "title": "ETA (Estimated Time of Arrival)",
+            "description": "The predicted time for a driver to reach the pickup location or destination.",
+            "rules": [
+                "Calculated using real-time traffic data",
+                "Updates continuously during trip",
+                "Displayed in minutes when under 60 min",
+                "Accounts for current driver location"
+            ]
+        },
+        {
+            "id": "6",
+            "title": "Pickup Location",
+            "description": "The GPS coordinates or address where the driver will meet the rider to begin the trip.",
+            "rules": [
+                "Must be accessible by vehicle",
+                "Cannot be in restricted zones",
+                "Pin can be adjusted by rider",
+                "Driver navigates to this location first"
+            ]
+        },
+        {
+            "id": "7",
+            "title": "Drop-off Location",
+            "description": "The destination where the rider will be transported to complete the trip.",
+            "rules": [
+                "Set before or during ride",
+                "Can be modified mid-trip with fare adjustment",
+                "Determines base fare calculation",
+                "Must be within service area"
+            ]
+        },
+        {
+            "id": "8",
+            "title": "Fare",
+            "description": "The total cost charged to the rider for a completed trip.",
+            "rules": [
+                "Includes base fare plus distance and time",
+                "May include surge multiplier",
+                "Includes platform service fee",
+                "Tolls and extras added separately"
+            ]
+        },
+        {
+            "id": "9",
+            "title": "Rating",
+            "description": "A 1-5 star score that riders and drivers give each other after completing a trip.",
+            "rules": [
+                "Both parties rate after trip ends",
+                "Ratings are anonymous",
+                "Low ratings may trigger review",
+                "Affects future matching priority"
+            ]
+        },
+        {
+            "id": "10",
+            "title": "Cancellation",
+            "description": "When a rider or driver terminates a ride request before or during pickup.",
+            "rules": [
+                "Free cancellation within grace period",
+                "Fee charged after driver en route",
+                "Excessive cancellations may affect account",
+                "Reason required for driver cancellations"
+            ]
+        },
+        {
+            "id": "11",
+            "title": "Service Area",
+            "description": "The geographic region where the ride-hailing platform operates and accepts ride requests.",
+            "rules": [
+                "Defined by regulatory agreements",
+                "Pickup must be within boundaries",
+                "Drop-off can extend slightly outside",
+                "Coverage varies by city/region"
+            ]
+        },
+        {
+            "id": "12",
+            "title": "Driver Queue",
+            "description": "The system that manages which drivers receive ride requests based on proximity and availability.",
+            "rules": [
+                "Prioritizes nearest available driver",
+                "Considers driver acceptance rate",
+                "Factors in vehicle type requirements",
+                "Real-time updates as drivers move"
+            ]
+        },
+        {
+            "id": "13",
+            "title": "Trip",
+            "description": "A completed journey from pickup to drop-off, including all associated data and transactions.",
+            "rules": [
+                "Starts when driver confirms pickup",
+                "Ends when rider is dropped off",
+                "Route is tracked via GPS",
+                "Generates receipt upon completion"
+            ]
+        },
+        {
+            "id": "14",
+            "title": "Wait Time",
+            "description": "The period a driver waits at the pickup location for the rider to arrive at the vehicle.",
+            "rules": [
+                "Grace period before charges begin",
+                "Per-minute fee after grace period",
+                "Maximum wait time before auto-cancel",
+                "Rider notified of driver arrival"
+            ]
+        },
+        {
+            "id": "15",
+            "title": "Promo Code",
+            "description": "A discount code that riders can apply to reduce the fare of their trip.",
+            "rules": [
+                "One promo per trip",
+                "May have expiration date",
+                "Some restricted to new users only",
+                "Discount applied before payment"
+            ]
+        },
+        {
+            "id": "16",
+            "title": "Vehicle Class",
+            "description": "Categories of vehicles available on the platform, each with different pricing and features.",
+            "rules": [
+                "Standard, Premium, XL are common tiers",
+                "Price increases with vehicle class",
+                "Passenger capacity varies by class",
+                "Driver must meet class requirements"
+            ]
+        },
+        {
+            "id": "17",
+            "title": "In-App Payment",
+            "description": "Electronic payment processed through the app using stored payment methods.",
+            "rules": [
+                "Charged automatically after trip",
+                "Supports credit/debit cards",
+                "May include digital wallets",
+                "Cash option available in some markets"
+            ]
+        },
+        {
+            "id": "18",
+            "title": "Driver Earnings",
+            "description": "The amount paid to the driver for completed trips, minus platform commission.",
+            "rules": [
+                "Calculated per trip completed",
+                "Includes base + distance + time share",
+                "Tips are 100% to driver",
+                "Weekly or instant payout options"
+            ]
+        },
+        {
+            "id": "19",
+            "title": "Safety Features",
+            "description": "In-app tools designed to protect riders and drivers during trips.",
+            "rules": [
+                "Includes emergency button/SOS",
+                "Trip sharing with contacts",
+                "Real-time GPS tracking",
+                "Driver identity verification"
+            ]
+        },
+        {
+            "id": "20",
+            "title": "Matching Algorithm",
+            "description": "The system that pairs available drivers with incoming ride requests.",
+            "rules": [
+                "Optimizes for shortest pickup time",
+                "Considers driver preferences",
+                "Balances supply across zones",
+                "Updates in real-time"
+            ]
+        }
+    ]
+}
