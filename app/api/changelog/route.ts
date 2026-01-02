@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
+    if (!isSupabaseConfigured) {
+        return NextResponse.json({
+            error: "Supabase environment variables are missing on the server. Please check Vercel settings."
+        }, { status: 500 });
+    }
+
     const { searchParams } = new URL(request.url);
     const entryId = searchParams.get('entryId');
 

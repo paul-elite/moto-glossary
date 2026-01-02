@@ -1,10 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
 // GET all entries
 export async function GET() {
+  if (!isSupabaseConfigured) {
+    return NextResponse.json({
+      error: "Supabase environment variables are missing on the server. Please check Vercel settings."
+    }, { status: 500 });
+  }
+
   const { data, error } = await supabase
     .from('glossary_entries')
     .select('*')
