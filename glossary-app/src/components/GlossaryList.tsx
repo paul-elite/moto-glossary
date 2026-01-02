@@ -1,27 +1,23 @@
 import React from 'react';
 import GlossaryItem from './GlossaryItem';
 
-type GlossaryEntry = {
-  title: string;
-  description: string;
-  rules: string;
-};
+import { GlossaryEntry } from '../types';
 
 type GlossaryListProps = {
-  entries: GlossaryEntry[];
+  items: GlossaryEntry[];
 };
 
-const GlossaryList: React.FC<GlossaryListProps> = ({ entries }) => {
+const GlossaryList: React.FC<GlossaryListProps> = ({ items }) => {
   return (
     <div>
       <h2>Glossary</h2>
       <ul>
-        {entries.map((entry, index) => (
+        {items.map((entry, index) => (
           <li key={index}>
-            <GlossaryItem 
-              title={entry.title} 
-              description={entry.description} 
-              rules={entry.rules} 
+            <GlossaryItem
+              title={entry.title}
+              description={entry.description}
+              rules={entry.rules}
             />
           </li>
         ))}

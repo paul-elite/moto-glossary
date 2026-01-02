@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { saveGlossaryItem } from '../utils/storage';
 import { GlossaryEntry } from '../types';
 
-const GlossaryItemForm: React.FC = () => {
+interface GlossaryItemFormProps {
+  onAddItem: (item: GlossaryEntry) => void;
+}
+
+const GlossaryItemForm: React.FC<GlossaryItemFormProps> = ({ onAddItem }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [rules, setRules] = useState('');
@@ -14,7 +17,7 @@ const GlossaryItemForm: React.FC = () => {
       description,
       rules,
     };
-    saveGlossaryItem(newItem);
+    onAddItem(newItem);
     setTitle('');
     setDescription('');
     setRules('');
